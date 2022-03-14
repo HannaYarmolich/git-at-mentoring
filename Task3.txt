@@ -1,0 +1,9 @@
+var happiness = {
+    health: 1, 
+    profession: 3, 
+    society: 4, 
+    location: 5,
+    family: 2 
+};
+
+Object.entries(happiness).sort((a,b) => a[1] > b[1] ? 1 : -1).map((x) => {return x[0]})

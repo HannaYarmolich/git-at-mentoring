@@ -1,0 +1,25 @@
+function addWithDelay(
+    param1 = 101,
+    param2 = -1,
+    param3 = 999,
+    param4 = 0,
+    param5 = 1,
+) {
+    values = [param1, param2, param3, param4, param5];
+    var result = values.filter(function (number) {
+        return number < 0;
+    });
+    return new Promise((resolve, reject) => {
+        setTimeout(() => {
+            if (result.length === 0) {
+                resolve(values.reduce((i, j) => i+j))
+            }
+            else {
+                reject('Error! Some parameter is a negative number!')
+            }
+        }, 1000);
+    });
+}
+addWithDelay()
+    .then(d => console.log(d))
+    .catch(e => console.error(e));

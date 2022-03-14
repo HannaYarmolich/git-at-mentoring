@@ -1,0 +1,2 @@
+var x = Array.from({length: 10}, () => Math.floor(Math.random() * 101));
+x.sort().slice(7, 10).reduce((accumulator, current) => accumulator*current,1);
